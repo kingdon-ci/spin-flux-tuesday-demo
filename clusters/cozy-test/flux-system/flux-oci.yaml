@@ -1,0 +1,17 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: flux-oci
+  namespace: flux-system
+spec:
+  provider: generic
+  interval: 10m0s
+  url: oci://ghcr.io/fluxcd/flux-manifests
+  ref:
+    semver: ~2.3.0
+  verify:
+    provider: cosign
+    matchOIDCIdentity:
+      - issuer: "^https://token.actions.githubusercontent.com$"
+        subject: "^https://github.com/fluxcd/flux2/.*$"
