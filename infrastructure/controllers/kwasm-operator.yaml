@@ -1,0 +1,34 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kwasm-operator
+  namespace: flux-system
+spec:
+  releaseName: kwasm-operator
+  interval: 10m
+  suspend: true
+  targetNamespace: kwasm
+  storageNamespace: kwasm
+  chart:
+    spec:
+      version: ">=0.2.3"
+      chart: kwasm-operator
+      sourceRef:
+        kind: HelmRepository
+        name: kwasm-charts
+  install:
+    createNamespace: true
+    disableWait: false
+  driftDetection:
+    mode: enabled
+  values: {}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: kwasm-charts
+  namespace: flux-system
+spec:
+  interval: 12h
+  type: default
+  url: https://kwasm.sh/kwasm-operator/

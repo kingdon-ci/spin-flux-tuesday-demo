@@ -1,0 +1,36 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: spin-operator
+  namespace: flux-system
+spec:
+  releaseName: spin-operator
+  interval: 10m
+  suspend: true
+  targetNamespace: spin-operator
+  storageNamespace: spin-operator
+  dependsOn:
+    - name: cert-manager
+  chartRef:
+    kind: OCIRepository
+    name: spinkube-charts
+  install:
+    createNamespace: true
+    disableWait: false
+  driftDetection:
+    mode: enabled
+  values: {}
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: spinkube-charts
+  namespace: flux-system
+spec:
+  interval: 12h
+  layerSelector:
+    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+    operation: copy
+  url: oci://ghcr.io/spinkube/charts/spin-operator
+  ref:
+    semver: "~0.2.0"

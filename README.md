@@ -43,6 +43,15 @@ can skip "kwasm-operator" and proceed otherwise identically!
 Watch the video if you have the patience for such things, or skip to the
 [tl;dw](#tldw) if you'd like to immediately try it for yourself.
 
+### Todo:
+
+- [ ] Add `Receiver` `Ingress`
+- [ ] Add `flux-docs` `Ingress`
+- [ ] Add `simple-spinapp` `Ingress`
+- [ ] Add `IngressRoutes` (external)
+- [ ] Test everything one more time (eg. `flux-oci`)
+- [ ] Reset `flux-system` to prepare for bootstrap
+
 ### WARNING
 
 Not for production, this is an example only! We provisioned a test cluster in
@@ -106,6 +115,25 @@ $ flux bootstrap github --owner=$GITHUB_USER --personal --repository=$GITHUB_REP
    to try something a bit more difficult,<br/>or for the gentle intro check out
    <https://www.spinkube.dev/docs/spin-plugin-kube/>
    <br/>– if you're entirely new to the idea of running Spin apps on Kubernetes!
+
+#### Troubleshooting
+
+If your `SpinApp` is stuck in `ContainerCreating`, and you are using KWasm,
+then you may simply need to [annotate the nodes](https://github.com/KWasm/kwasm-operator?tab=readme-ov-file#kwasm-operator).
+
+* `for i in `kubectl get node -o name`; do kubectl annotate $i kwasm.sh/kwasm-node=true; done`
+
+If you get this error:
+
+```
+✔ component manifests are up to date
+► installing components in "flux-system" namespace
+✗ Kustomization/flux-system/flux-system dry-run failed: no matches for kind "Kustomization" in version "kustomize.toolkit.fluxcd.io/v1"
+```
+
+...Then either I forgot to clean up after my experiments in `flux-system`, or
+the livestream hasn't finished yet. You can delete that directory from inside
+your fork (`clusters/cozy-test/flux-system`) and just bootstrap Flux again.
 
 ## What is in the demo
 

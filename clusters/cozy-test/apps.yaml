@@ -6,8 +6,9 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
+  suspend: true
   dependsOn:
-    - name: infra-configs
+    - name: 02-infra-configs
   sourceRef:
     kind: GitRepository
     name: flux-system
