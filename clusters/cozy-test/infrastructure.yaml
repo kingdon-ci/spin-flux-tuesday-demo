@@ -33,7 +33,7 @@ spec:
     name: flux-system
   path: ./infrastructure/configs
   prune: true
-  patches: {} # test! staging! the patch below is only for production
+  patches: [] # test! staging! the patch below is only for production
 
     # - patch: |
     #     - op: replace
