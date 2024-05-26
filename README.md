@@ -121,7 +121,9 @@ $ flux bootstrap github --owner=$GITHUB_USER --personal --repository=$GITHUB_REP
 If your `SpinApp` is stuck in `ContainerCreating`, and you are using KWasm,
 then you may simply need to [annotate the nodes](https://github.com/KWasm/kwasm-operator?tab=readme-ov-file#kwasm-operator).
 
-* `for i in `kubectl get node -o name`; do kubectl annotate $i kwasm.sh/kwasm-node=true; done`
+```bash
+for i in `kubectl get node -o name`; do kubectl annotate $i kwasm.sh/kwasm-node=true; done
+```
 
 If you get this error:
 
