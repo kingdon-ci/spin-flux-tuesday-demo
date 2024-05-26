@@ -4,6 +4,7 @@ metadata:
   name: webhook-receiver
   namespace: flux-system
 spec:
+  ingressClassName: nginx
   rules:
   - host: flux-system-webhook.test.moomboo.space
     http:
