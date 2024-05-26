@@ -18,12 +18,12 @@ spec:
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: cert-manager
+  name: 05-cert-manager
   namespace: flux-system
 spec:
   releaseName: cert-manager
   interval: 30m
-  suspend: true
+  suspend: false
   targetNamespace: cert-manager
   storageNamespace: cert-manager
   chart:

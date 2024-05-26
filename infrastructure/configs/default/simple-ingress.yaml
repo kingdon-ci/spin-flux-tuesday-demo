@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple
+  namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: simple.test.moomboo.space
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: simple-spinapp
+            port:
+              number: 80
+  tls:
+  - hosts:
+    - simple.test.moomboo.space
+    secretName: simple-cert
