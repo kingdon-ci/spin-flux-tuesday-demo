@@ -48,7 +48,7 @@ Watch the video if you have the patience for such things, or skip to the
 - [X] Add flux-system-webhook `Ingress` & Flux `Receiver`
 - [X] Add `IngressRoutes` (external)
 - [ ] Add `flux-docs` `Ingress`
-- [ ] Add `simple-spinapp` `Ingress`
+- [X] Add `simple-spinapp` `Ingress`
 - [ ] Patch/annotate the nodes using the `flux/ssa: merge` and `prune: false`
 - [X] Fix numbers to include HelmReleases (cert-manager before configs)
 - [ ] Test everything one more time (eg. `flux-oci`)
