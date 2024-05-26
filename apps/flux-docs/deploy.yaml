@@ -18,6 +18,7 @@ metadata:
 spec:
   timeout: 2m0s
   retryInterval: 2m30s
+  suspend: true
   interval: 10m0s
   path: ./kustomize-flux
   prune: true
