@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 10m0s
-  suspend: true
+  suspend: false
   dependsOn:
     - name: 10-infra-configs
   sourceRef:
