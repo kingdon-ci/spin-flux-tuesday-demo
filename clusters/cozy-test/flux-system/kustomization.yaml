@@ -4,7 +4,7 @@ resources:
 - receiver-ingress.yaml
 - receiver.yaml
 # - flux-oci.yaml
-- gotk-components.yaml
+# - gotk-components.yaml
 - gotk-sync.yaml
 patches:
   - patch: |
