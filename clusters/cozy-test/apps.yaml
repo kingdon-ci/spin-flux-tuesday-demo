@@ -14,5 +14,5 @@ spec:
     name: flux-system
   path: ./apps
   prune: true
-  wait: true
+  wait: false
   timeout: 5m0s
