@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: kwasm-operator
   interval: 10m
-  suspend: true
+  suspend: false
   targetNamespace: kwasm
   storageNamespace: kwasm
   chart:

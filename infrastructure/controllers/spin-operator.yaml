@@ -6,7 +6,7 @@ metadata:
 spec:
   releaseName: spin-operator
   interval: 10m
-  suspend: true
+  suspend: false
   targetNamespace: spin-operator
   storageNamespace: spin-operator
   dependsOn:
