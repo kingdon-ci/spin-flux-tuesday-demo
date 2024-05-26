@@ -7,12 +7,12 @@ spec:
   acme:
     # Replace the email address with your own contact email
     email: fluxcdbot@users.noreply.github.com
-    # The server is replaced in /clusters/production/infrastructure.yaml
+    # Only request staging certs to avoid rate limiting from LetsEncrypt.org
+    # (this is a test instance which gets destroyed and recreated often)
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-nginx
     solvers:
       - http01:
-          ingress: {}
-            # class: nginx
-            # ingressClassName: ...
+          ingress:
+            ingressClassName: nginx
