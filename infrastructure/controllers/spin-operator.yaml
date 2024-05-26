@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: spin-operator
+  name: 06-spin-operator
   namespace: flux-system
 spec:
   releaseName: spin-operator
@@ -10,7 +10,7 @@ spec:
   targetNamespace: spin-operator
   storageNamespace: spin-operator
   dependsOn:
-    - name: cert-manager
+    - name: 05-cert-manager
   chartRef:
     kind: OCIRepository
     name: spinkube-charts

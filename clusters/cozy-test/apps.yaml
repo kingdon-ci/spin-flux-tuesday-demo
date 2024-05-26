@@ -8,7 +8,7 @@ spec:
   interval: 10m0s
   suspend: true
   dependsOn:
-    - name: 02-infra-configs
+    - name: 10-infra-configs
   sourceRef:
     kind: GitRepository
     name: flux-system

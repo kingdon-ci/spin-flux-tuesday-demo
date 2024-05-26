@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: kwasm-operator
+  name: 04-kwasm-operator
   namespace: flux-system
 spec:
   releaseName: kwasm-operator
