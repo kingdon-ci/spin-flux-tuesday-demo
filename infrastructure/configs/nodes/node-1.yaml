@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Node
+metadata:
+  name: kubernetes-test-md0-tnjhv-lj6tx
+  annotations:
+    kustomize.toolkit.fluxcd.io/prune: disabled
+    kustomize.toolkit.fluxcd.io/ssa: merge
+    kwasm.sh/kwasm-node: true

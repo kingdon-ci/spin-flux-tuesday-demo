@@ -6,3 +6,4 @@ resources:
   - receiver-ingress.yaml
   - spin-operator.runtime-class.yaml
   - default/
+  - nodes/
