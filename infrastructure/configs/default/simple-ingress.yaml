@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: simple
   namespace: default
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   ingressClassName: nginx
   rules:
@@ -16,3 +18,7 @@ spec:
             name: simple-spinapp
             port:
               number: 80
+  tls:
+  - hosts:
+    - simple.test.moomboo.space
+    secretName: simple-cert
