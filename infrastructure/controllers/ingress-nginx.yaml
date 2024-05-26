@@ -18,6 +18,8 @@ spec:
   releaseName: ingress-nginx
   targetNamespace: ingress-nginx
   storageNamespace: ingress-nginx
+  install:
+    createNamespace: true
   chart:
     spec:
       chart: ingress-nginx
