@@ -15,7 +15,7 @@ metadata:
 spec:
   interval: 2m30s
   timeout: 2m0s
-  suspend: false
+  suspend: true
   releaseName: ingress-nginx
   targetNamespace: ingress-nginx
   storageNamespace: ingress-nginx
