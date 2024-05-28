@@ -23,7 +23,7 @@ metadata:
 spec:
   releaseName: cert-manager
   interval: 30m
-  suspend: true
+  suspend: false
   targetNamespace: cert-manager
   storageNamespace: cert-manager
   chart:
