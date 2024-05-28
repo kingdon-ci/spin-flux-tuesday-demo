@@ -51,8 +51,8 @@ Watch the video if you have the patience for such things, or skip to the
 - [X] Add `simple-spinapp` `Ingress`
 - [X] Patch/annotate the nodes using the `flux/ssa: merge` and `prune: false`
 - [X] Fix numbers to include HelmReleases (cert-manager before configs)
+- [X] Reset `flux-system` to prepare for bootstrap
 - [ ] Test everything one more time (eg. `flux-oci`)
-- [ ] Reset `flux-system` to prepare for bootstrap
 
 ### WARNING
 
