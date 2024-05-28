@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Node
 metadata:
-  name: kubernetes-test-md0-6zmzs-wll6v
+  name: kubernetes-test-md0-mzrhb-tljkn
   annotations:
     kustomize.toolkit.fluxcd.io/prune: disabled
     kustomize.toolkit.fluxcd.io/ssa: merge
