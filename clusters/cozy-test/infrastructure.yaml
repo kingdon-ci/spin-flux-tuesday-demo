@@ -33,11 +33,12 @@ spec:
     name: flux-system
   path: ./infrastructure/configs
   prune: true
-  patches: # test! staging! the patch below is only for production
-    - patch: |
-        - op: replace
-          path: /spec/acme/server
-          value: https://acme-v02.api.letsencrypt.org/directory
-      target:
-        kind: ClusterIssuer
-        name: letsencrypt
+  patches: [] # test! staging! the patch below is only for production
+
+    # - patch: |
+    #     - op: replace
+    #       path: /spec/acme/server
+    #       value: https://acme-v02.api.letsencrypt.org/directory
+    #   target:
+    #     kind: ClusterIssuer
+    #     name: letsencrypt
